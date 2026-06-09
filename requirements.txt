@@ -1,0 +1,4 @@
+#First create a virtual environment
+pypdf
+langchain-text-splitters
+qdrant-client
