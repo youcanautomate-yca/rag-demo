@@ -1,9 +1,11 @@
 from qdrant_client import QdrantClient
 
+from rag_utils.ask_ollama import ask_ollama
 from rag_utils.embedding import generate_embeddings
 from rag_utils.fetch_data import load_pdf
 from rag_utils.preprocessing import preprocess
 from rag_utils.chunking import chunk_text
+from rag_utils.ask_ollama import ask_ollama
 import yaml
 
 from rag_utils.vectorstore import  setup_collection, ingest_chunks
@@ -60,4 +62,27 @@ def main():
         embeddings)
     
     print("Data ingestion complete.")
+
+
+    # Step 5 - Querying and answering questions
+    question = input("Ask a question about the document: ")
+    query_vector = generate_embeddings([question], config["ollama"]["embedding_model"])
+
+    search_result = client.query_points(
+        collection_name=config["qdrant"]["collection_name"],
+        query=query_vector[0],
+        limit=3
+    )
+
+    context = "\n\n".join([hit.payload["text"] for hit in search_result.points])
+
+    print("\n--- Retrieved Context ---\n")
+    print(context)
+    
+    answer = ask_ollama(question, context, config)
+    print("\n--- Answer ---\n")
+    print(answer)
+    
+
+
 main()
