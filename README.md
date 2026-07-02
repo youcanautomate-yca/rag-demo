@@ -14,16 +14,6 @@ RAG (Retrieval Augmented Generation) is a powerful technique that combines:
 
 This approach ensures your AI model provides accurate, context-aware responses grounded in your actual documents.
 
-## ✨ Project Features
-
-- 📄 **PDF Processing**: Load and extract text from PDF documents
-- 🔍 **Text Preprocessing**: Clean and normalize document content
-- ✂️ **Intelligent Chunking**: Split documents into manageable chunks
-- 🧠 **Embedding Generation**: Create vector embeddings using Ollama
-- 💾 **Vector Storage**: Store embeddings in Qdrant vector database
-- 🤖 **Smart Querying**: Retrieve relevant context and generate answers
-- 🗣️ **Local LLM**: Run everything locally using Ollama
-
 ## 🎬 RAG Video Series
 
 Learn the complete RAG implementation step-by-step:
@@ -38,5 +28,17 @@ Learn the complete RAG implementation step-by-step:
 | 6 | **Building a Chatbot - Retrieval Phase** | [Watch Video](https://youtu.be/NMjk3LU-CwY?si=-lcwx5AE-k9PvRWY) |
 
 ---
+
+## ✨ Project Features
+
+- 📄 **PDF Processing**: Load and extract text from PDF documents
+- 🔍 **Text Preprocessing**: Clean and normalize document content
+- ✂️ **Intelligent Chunking**: Split documents into manageable chunks
+- 🧠 **Embedding Generation**: Create vector embeddings using Ollama
+- 💾 **Vector Storage**: Store embeddings in Qdrant vector database
+- 🤖 **Smart Querying**: Retrieve relevant context and generate answers
+- 🗣️ **Local LLM**: Run everything locally using Ollama
+
+
 
 **👉 Start with Session 1 to understand the fundamentals, then follow along with each project session!**
